@@ -1,4 +1,4 @@
-# Finance-assistant-
+# Finance-assistant
 A modular RAG-based finance chatbot built with MLOps best practices. It answers finance and investment questions using the latest financial news.
 
 Tech Stack
