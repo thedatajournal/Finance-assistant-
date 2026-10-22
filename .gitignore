@@ -1,0 +1,36 @@
+# Secrets: never commit these
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# Model files and downloads
+adapter/
+checkpoints/
+*.safetensors
+*.bin
+*.pt
+*.gguf
+.cache/
+huggingface/
+
+# Comet
+.cometml-runs/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
