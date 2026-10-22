@@ -1,0 +1,37 @@
+model:
+  base: mistralai/Mistral-7B-Instruct-v0.2
+  max_seq_length: 1024
+
+lora:
+  r: 16
+  alpha: 32
+  dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, o_proj]
+
+training:
+  epochs: 1
+  batch_size: 1
+  grad_accum: 8
+  learning_rate: 0.0002
+  warmup_ratio: 0.03
+  logging_steps: 10
+  eval_steps: 50
+
+data:
+  version: v1
+  test_size: 0.1
+  top_k: 3
+  seed: 42
+  embedding_model: sentence-transformers/all-MiniLM-L6-v2
+
+qdrant:
+  url: https://YOUR-CLUSTER-URL:6333
+  collection: finance_news
+  text_key: text
+
+teacher:
+  model: gpt-4o-mini
+  temperature: 0.3
+
+registry:
+  model_name: finance-mistral-lora
